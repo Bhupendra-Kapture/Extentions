@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Add to Excel – Kapture Tasks",
+  "version": "1.0",
+  "description": "Adds an 'Add to Excel' button next to task titles on project.kapture.site.",
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": [
+    "https://jira.kapture.site/*",
+    "https://script.google.com/*",
+    "https://script.googleusercontent.com/*",
+    "https://bitbucket.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://jira.kapture.site/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

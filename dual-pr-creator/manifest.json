@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Dual PR Creator – GitHub",
+  "version": "1.0",
+  "description": "Inject a Raise PR button on GitHub branch pages to open PRs to multiple target branches at once.",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/kapture-cx/kapture-vitos-ui/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
