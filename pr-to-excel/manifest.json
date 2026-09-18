@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "PR to Excel – GitHub",
+  "version": "1.0",
+  "description": "Adds an 'Add to Excel' button on GitHub PR pages to log PR details into a Google Sheet.",
+  "permissions": ["tabs"],
+  "host_permissions": [
+    "https://github.com/kapture-cx/*",
+    "https://script.google.com/*",
+    "https://script.googleusercontent.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/kapture-cx/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
